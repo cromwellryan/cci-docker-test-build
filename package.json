@@ -1,0 +1,17 @@
+{
+  "name": "circle-container-tests",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "author": "Ryan Cromwell <ryan@cromwellhaus.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "mocha": "^8.2.0"
+  }
+}
