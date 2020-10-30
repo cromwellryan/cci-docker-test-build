@@ -1,12 +1,14 @@
-FROM node:lts-alpine as TESTS
-
+FROM node:lts-alpine as base
 WORKDIR /app
-
 ENV NODE_ENV=development
-
-COPY package* ./
+COPY package* /app/
 RUN npm install
 
-COPY . ./
+FROM base as src
+COPY . /app/
 
-CMD npm test
+FROM src as test
+RUN npm test
+
+FROM src as app
+CMD echo "Hello world"
