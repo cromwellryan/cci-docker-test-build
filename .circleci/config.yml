@@ -10,8 +10,8 @@ jobs:
       - checkout
       - run:
           name: Test
-          command: docker --context default build --target test .
+          command: docker --context default --progress plain build --target test .
 
       - run:
           name: Build
-          command: docker --context default build --target app --tag latest .
+          command: docker --context default --progress plain build --target app --tag latest .
