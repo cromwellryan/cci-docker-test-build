@@ -14,7 +14,7 @@ jobs:
 
       - run:
           name: Build
-          command: docker --context default build --progress plain --target app --tag docker.pkg.github.com/cromwellryan/cci-test-build/app:latest .
+          command: docker --context default build --progress plain --target app --tag docker.pkg.github.com/cromwellryan/cci-docker-test-build/app:latest .
 
       - run:
           name: Log in to Github Container Registry
@@ -24,4 +24,4 @@ jobs:
       - run:
           name: Push Image
           command: |
-            docker push docker.pkg.github.com/cromwellryan/cci-test-build/app:latest
+            docker push docker.pkg.github.com/cromwellryan/cci-docker-test-build/app:latest
