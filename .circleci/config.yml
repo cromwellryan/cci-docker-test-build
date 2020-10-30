@@ -1,0 +1,17 @@
+version: 2.1
+
+jobs:
+  build: 
+    machine:
+      image: ubuntu-1604:202007-01 # we want a new Docker
+    environment:
+      DOCKER_BUILDKIT: 1
+    steps:
+      - checkout
+      - run:
+          name: Test
+          command: docker --context default build --target test .
+
+      - run:
+          name: Build
+          command: docker --context default build --target app --tag latest .
